@@ -1,19 +1,22 @@
 package hello;
 
+import java.util.Date;
+
 public class Page {
-    private final String content;
-    private final String content1;
+    private final String date;
+    private final String time;
 
-    public Page(String content1) {
-        this.content = "Максимальный текст ";
-        this.content1 = content1;
+    public Page() {
+        Date date = new Date();
+        this.date = String.valueOf(date.getDate()) + "." + String.valueOf(date.getMonth()+1) + "." + String.valueOf(date.getYear()+1900);
+        this.time = String.valueOf(date.getHours()) + ":" + String.valueOf(date.getMinutes()) + ":" + String.valueOf(date.getSeconds());
     }
 
-    public String getContent() {
-        return content;
+    public String getDate() {
+        return date;
     }
 
-    public String getContent1() {
-        return content1;
+    public String getTime() {
+        return time;
     }
 }
